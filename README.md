@@ -1,5 +1,5 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+This WAS the starter code for students in CSE 210, but has since been changed.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
@@ -8,3 +8,5 @@ This repository contains the starter code for many different projects. They are 
 * `prepare` - Starter projects for each of the preparation Learning Activities.
 * `prove` - Starter projects for each of the prove Developer projects.
 * `final` - Starter projects for final project.
+
+I'm quite certain many things will change from here on out.
