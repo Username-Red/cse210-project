@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World!");
+        Random rd = new Random();
+
+        int rand_num = rd.Next(100,200);
+
+        Console.WriteLine(rand_num);
     }
 }

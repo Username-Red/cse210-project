@@ -18,7 +18,9 @@ class Program
                 //code here
                 // we want one of our writing prompts to be displayed to the screen
                 // then we want our user to input some text
+
                 randomPrompt prompt1 = new randomPrompt();
+                prompt1.Display();
             }
 
             else if (answer == "2") {
