@@ -15,7 +15,7 @@ public class randomPrompt {
 
     //methods
 
-    public void Display() {
+    public void DisplayPrompt() {
 
         int randomNum = rd.Next(0, 6);
         Console.WriteLine(prompts[randomNum]);
