@@ -6,8 +6,12 @@ class Program
     static void Main(string[] args)
     {
         string answer = "";
-        Journal prompt1 = new Journal();
         Journal write = new Journal();
+        Entry content = new Entry();
+        List<string> pages = new List<string>();
+        List<string> prompts = new List<string>();
+        List<string> dates = new List<string>();
+
 
         Console.WriteLine("HI!");
         Console.WriteLine("I'm Citree! I'll be your Journal Keeper for this writing session!");
@@ -24,7 +28,19 @@ class Program
 
             if (answer == "1") {
                 //code here
-                write.AddEntry();
+
+                DateTime theCurrentTime = DateTime.Now;
+                string dateText = theCurrentTime.ToShortDateString(); 
+                dates.Add(dateText);
+
+                content.GivePrompt();
+                string prompt = content.prompt;
+                prompts.Add(prompt);
+
+
+                content.WriteEntry();
+                string page = content.entry;
+                pages.Add(page);
 
                 Console.WriteLine("That was a lovely entry!");
 
@@ -33,8 +49,11 @@ class Program
 
             else if (answer == "2") {
                 
+                write.dates = dates;
+                write.prompts = prompts;
+                write.pages = pages;
                 write.DisplayEntries();
-                Console.WriteLine("Yup, those aresome deep entries right there.");
+                Console.WriteLine("\nYup, those are some deep entries right there.");
 
             }
 
@@ -42,14 +61,25 @@ class Program
 
                 Console.WriteLine("Loading deep dark secrets... Kidding XD");
 
+                pages = new List<string>();
+                prompts = new List<string>();
+                dates = new List<string>();
 
                 write.Load();
+
+                pages = write.pages;
+                prompts = write.prompts;
+                dates = write.dates;
                 
             }
 
             else if (answer == "4") {
 
                 Console.WriteLine("Saving data...");
+
+                write.dates = dates;
+                write.prompts = prompts;
+                write.pages = pages;
 
                 write.Save();
 

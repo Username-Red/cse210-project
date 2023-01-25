@@ -5,41 +5,25 @@ public class Journal {
      
 
     //member variables
-    Random _rd = new Random();
-    string[] prompts = {"Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?", "What is something that happened today that I am grateful for?"};
+    public List<string> prompts = new List<string>();
 
     public List<string> pages = new List<string>();
-    public string _entry = "";
+
     public string _filename = ""; 
-    public string _prompt = "*";
+
+    public List<string> dates = new List<string>();
 
 
     //call class
     public Journal(){}
 
     //methods
-    public void AddEntry(){
-
-        // display _prompt
-        int randomNum = _rd.Next(0, 6);
-        _prompt = (prompts[randomNum]);
-        Console.WriteLine(_prompt);
-
-        // Allow user to write their entry
-        Console.Write(": ");
-        _entry = Console.ReadLine();
-        
-        // Get the date
-        DateTime theCurrentTime = DateTime.Now;
-        string dateText = theCurrentTime.ToShortDateString(); 
-
-        // Add all information to the pages list
-        pages.Add("Date: " + dateText + " - Prompt: " + _prompt + "\n" + _entry);
-    }
 
     public void DisplayEntries(){
-        foreach (string page in pages) {
-            Console.WriteLine(page);
+        for (int i = 0; i <= pages.Count() - 1; i++) {
+            Console.Write($"\nDate: {dates[i]} - ");
+            Console.WriteLine($"Prompt: {prompts[i]}");
+            Console.WriteLine($"{pages[i]}");
         }
     }
 
@@ -50,8 +34,13 @@ public class Journal {
 
         using (StreamWriter journalContent = new StreamWriter(_filename)) {
 
-            foreach (string page in pages) {
-                journalContent.WriteLine(page);
+            for(int i = 0; i <= pages.Count() - 1; i++){
+                journalContent.Write(dates[i]);
+                journalContent.Write("|");
+                journalContent.Write(prompts[i]);
+                journalContent.Write("|");
+                journalContent.WriteLine(pages[i]);
+
             }
 
         }
@@ -64,9 +53,16 @@ public class Journal {
         _filename = Console.ReadLine();
         string[] content = System.IO.File.ReadAllLines(_filename);
 
-        foreach (string page in content) {
-            pages.Add(page);
+        foreach (string line in content){
+            string[] parts = line.Split("|");
 
+            string loadDate = parts[0];
+            string loadPrompt = parts[1];
+            string loadContent = parts[2];
+
+            dates.Add(loadDate);
+            prompts.Add(loadPrompt);
+            pages.Add(loadContent);
         }
 
 
