@@ -34,12 +34,12 @@ class Program
                 dates.Add(dateText);
 
                 content.GivePrompt();
-                string prompt = content.prompt;
+                string prompt = content._prompt;
                 prompts.Add(prompt);
 
 
                 content.WriteEntry();
-                string page = content.entry;
+                string page = content._entry;
                 pages.Add(page);
 
                 Console.WriteLine("\nThat was a lovely entry!");
@@ -49,9 +49,9 @@ class Program
 
             else if (answer == "2") {
                 
-                write.dates = dates;
-                write.prompts = prompts;
-                write.pages = pages;
+                write._dates = dates;
+                write._prompts = prompts;
+                write._pages = pages;
                 write.DisplayEntries();
                 Console.WriteLine("\nYup, those are some deep entries right there.");
 
@@ -67,9 +67,9 @@ class Program
 
                 write.Load();
 
-                pages = write.pages;
-                prompts = write.prompts;
-                dates = write.dates;
+                pages = write._pages;
+                prompts = write._prompts;
+                dates = write._dates;
                 
             }
 
@@ -77,9 +77,9 @@ class Program
 
                 Console.WriteLine("Saving data...");
 
-                write.dates = dates;
-                write.prompts = prompts;
-                write.pages = pages;
+                write._dates = dates;
+                write._prompts = prompts;
+                write._pages = pages;
 
                 write.Save();
 

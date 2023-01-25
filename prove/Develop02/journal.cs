@@ -5,13 +5,13 @@ public class Journal {
      
 
     //member variables
-    public List<string> prompts = new List<string>();
+    public List<string> _prompts = new List<string>();
 
-    public List<string> pages = new List<string>();
+    public List<string> _pages = new List<string>();
 
     public string _filename = ""; 
 
-    public List<string> dates = new List<string>();
+    public List<string> _dates = new List<string>();
 
 
     //call class
@@ -20,10 +20,10 @@ public class Journal {
     //methods
 
     public void DisplayEntries(){
-        for (int i = 0; i <= pages.Count() - 1; i++) {
-            Console.Write($"\nDate: {dates[i]} - ");
-            Console.WriteLine($"Prompt: {prompts[i]}");
-            Console.WriteLine($"{pages[i]}");
+        for (int i = 0; i <= _pages.Count() - 1; i++) {
+            Console.Write($"\nDate: {_dates[i]} - ");
+            Console.WriteLine($"Prompt: {_prompts[i]}");
+            Console.WriteLine($"{_pages[i]}");
         }
     }
 
@@ -34,12 +34,12 @@ public class Journal {
 
         using (StreamWriter journalContent = new StreamWriter(_filename)) {
 
-            for(int i = 0; i <= pages.Count() - 1; i++){
-                journalContent.Write(dates[i]);
+            for(int i = 0; i <= _pages.Count() - 1; i++){
+                journalContent.Write(_dates[i]);
                 journalContent.Write("|");
-                journalContent.Write(prompts[i]);
+                journalContent.Write(_prompts[i]);
                 journalContent.Write("|");
-                journalContent.WriteLine(pages[i]);
+                journalContent.WriteLine(_pages[i]);
 
             }
 
@@ -60,9 +60,9 @@ public class Journal {
             string loadPrompt = parts[1];
             string loadContent = parts[2];
 
-            dates.Add(loadDate);
-            prompts.Add(loadPrompt);
-            pages.Add(loadContent);
+            _dates.Add(loadDate);
+            _prompts.Add(loadPrompt);
+            _pages.Add(loadContent);
         }
 
 
