@@ -1,1 +1,1 @@
-2023/01/25|How did I see the hand of the Lord in my life today?|My instructor gave me great support and advice, it made me feel as if he were 100% on my side at all times.
+2023/01/25|What is something that happened today that I am grateful for?|My instructor's help, I don't think I'd have finished this project without him.
