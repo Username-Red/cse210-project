@@ -28,7 +28,7 @@ public class Journal {
     }
 
     public void Save(){
-        Console.Write("What file would you like to save these entries to?: ");
+        Console.Write("What .txt file would you like to save these entries to?: ");
         _filename = Console.ReadLine();
         Console.WriteLine();
 
@@ -49,7 +49,7 @@ public class Journal {
     }
 
     public void Load(){
-        Console.Write("Please enter the name of the file you would like to load: ");
+        Console.Write("Please enter the name of the .txt file you would like to load: ");
         _filename = Console.ReadLine();
         string[] content = System.IO.File.ReadAllLines(_filename);
 

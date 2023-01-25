@@ -12,6 +12,7 @@ public class Entry{
 
     //methods
     public void WriteEntry(){
+        Console.Write("> ");
         entry = Console.ReadLine();
 
     }
@@ -20,7 +21,7 @@ public class Entry{
         int randomNum = _rd.Next(0, 6);
         prompt = prompts[randomNum];
 
-        Console.WriteLine(prompt);
+        Console.WriteLine($"\n> {prompt}");
     }
 
 }

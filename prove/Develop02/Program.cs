@@ -42,7 +42,7 @@ class Program
                 string page = content.entry;
                 pages.Add(page);
 
-                Console.WriteLine("That was a lovely entry!");
+                Console.WriteLine("\nThat was a lovely entry!");
 
 
             }
