@@ -6,7 +6,6 @@ public class Word {
     private string _verse;
     private string _content;
 
-
     // Constructors 
 
     public Word(string book, string chapter, string verse, string content){
@@ -15,7 +14,6 @@ public class Word {
         _chapter = chapter;
         _verse = verse;
         _content = content;
-
     }
 
     // Methods
