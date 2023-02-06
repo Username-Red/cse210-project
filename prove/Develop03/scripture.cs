@@ -24,10 +24,7 @@ public class Scripture {
 
         string[] words = _text.Split(" ");
         int underscoreCount = 0;
-
-
         
-
 
         // USED FOR HIDING A WORD
 
@@ -39,40 +36,6 @@ public class Scripture {
         String blank = new String(underscore, count);
 
         words[randyNum] = blank;
-
-
-
-
-
-
-
-            
-
-        // while (words[randomNum].Contains("_") == false) 
-        //     {
-
-        //     string hiddenWord = words[randomNum];
-        //     usedNums.Append(randomNum);
-
-        //     int count = hiddenWord.Count();
-        //     char underscore = '_';
-
-            
-
-        //     String blank = new String(underscore, count);
-
-        //     words[randomNum] = blank;
-
-
-        //     randomNum = rd.Next(0, words.Count());
-
-        // }
-
-
-
-
-
-
 
 
 
