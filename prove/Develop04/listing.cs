@@ -18,21 +18,29 @@ public class Listing : Overlord{
     
 
     //Methods
-    public void ShowPrompt() {
+    public string ShowPrompt() {
         Random _rd = new Random();
         int randomNum = _rd.Next(0, 6);
+        string prompt = _prompts[randomNum];
 
-        Console.WriteLine($"--- {_prompts[randomNum]} ---");
+        Console.WriteLine($"--- {prompt} ---");
+
+
+        return prompt;
     }
     public void DisplayEntryCount() {
         int entryCount = _entries.Count();
         Console.WriteLine($"Brilliant! We wrote {entryCount} entries this session!");
     }
 
-     public void GetEntry() {
+    public string GetEntry() {
         Console.Write("> ");
         string entry = Console.ReadLine();
 
         _entries.Add(entry);
+
+        return entry;
     }
+
+
 }
