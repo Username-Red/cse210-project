@@ -39,10 +39,16 @@ public class SimpleGoal : Goal {
         else if (!_isComplete) {
             Console.Write("[ ]");
         }
-        Console.WriteLine($" {_title} ({_desc})");
+        Console.WriteLine($" {_title} ({_desc}) {_value}");
     }
 
-    public void CompleteGoal() {
+    public int CompleteGoal() {
         _isComplete = true;
+        return _value;
+    }
+
+    public void AddGoal(List<string> goalList){
+        goalList.Add(Serialize()); 
+
     }
 }

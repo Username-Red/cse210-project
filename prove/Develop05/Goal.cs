@@ -26,4 +26,6 @@ public class Goal {
     public virtual void DisplayGoal() {
         // Code Here
     }
+
+    
 }
