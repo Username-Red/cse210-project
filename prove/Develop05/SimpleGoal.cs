@@ -46,9 +46,4 @@ public class SimpleGoal : Goal {
         _isComplete = true;
         return _value;
     }
-
-    public void AddGoal(List<string> goalList){
-        goalList.Add(Serialize()); 
-
-    }
 }

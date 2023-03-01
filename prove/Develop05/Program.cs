@@ -9,7 +9,7 @@ class Program
 
 
 
-        List<string> goals = new List<string>();
+        List<Goal> goals = new List<Goal>();
         string[] goalTypes = {"Simple", "Eternal", "Checklist"};
         string [] options = {"Create", "List", "Save", "Load", "Record", "Quit"};
         int total = 0;
@@ -65,10 +65,17 @@ class Program
                     // Chuck that information into our SimpleGoal object
                     SimpleGoal simple = new SimpleGoal(goalName, goalDesc, pointValue, false);
                     // Add the goal to the list of goals
-                    simple.AddGoal(goals);
+                    goals.Add(simple);
 
                 }
 
+
+            }
+
+            else if (choice == "2") {
+                foreach (Goal line in goals) {
+                    line.DisplayGoal();
+                }
 
             }
 
