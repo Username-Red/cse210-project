@@ -23,9 +23,23 @@ public class Goal {
         // Code here
     }
 
+    public void Save() {
+        // Code here
+    }
+
+    public void Load() {
+        // Code here
+    }
+
     public virtual void DisplayGoal() {
         // Code Here
     }
 
-    
+    public virtual void CompleteGoal() {
+        //Code here
+    }
+
+    public int GetValue() {
+        return _value;
+    }
 }
