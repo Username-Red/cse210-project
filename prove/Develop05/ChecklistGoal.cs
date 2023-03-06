@@ -16,20 +16,23 @@ public class ChecklistGoal : Goal {
 
         public override string Serialize()
     {
-        string serial = $"SimpleGoal|{_title}|{_desc}|{_value}|{_isComplete}";
+        string serial = $"SimpleGoal|{_title}|{_desc}|{_value}|{_timesComplete}|{_timesToComplete}|{_isComplete}";
         return serial;
     }
 
-    public override void Deserialize(string line)
+    public override Goal Deserialize(string line)
     {
         string[] info = line.Split("|");
 
-        string _goaltype = info[0];
-        string _title = info[1];
-        string _desc = info[2];
-        int _value = Int32.Parse(info[3]);
-        bool _isComplete = bool.Parse(info[4]);
+        _title = info[1];
+        _desc = info[2];
+        _value = Int32.Parse(info[3]);
+        _timesComplete = Int32.Parse(info[4]);
+        _timesToComplete = Int32.Parse(info[5]);
+        _isComplete = bool.Parse(info[6]);
 
+        ChecklistGoal checklist = new ChecklistGoal(_title, _desc, _value, _isComplete, _timesToComplete);
+        return checklist;
 
     }
 

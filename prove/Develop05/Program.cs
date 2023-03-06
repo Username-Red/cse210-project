@@ -140,12 +140,45 @@ class Program
 
             // If the user chooses to save their goals
             else if (choice == "3") {
-                // Code here
+
+                // Get the filename to save to
+                Console.WriteLine("What file would you like to save to?");
+                string filename = Console.ReadLine();
+
+                // open / create the new file
+                using (StreamWriter saveFile = new StreamWriter(filename)) {
+                    
+                    // Save the total score first
+                    saveFile.WriteLine(total);
+                    
+                    // for each goal in the goal list
+                    foreach (Goal item in goals) {
+                        // Serialize the goal information
+                        string line = item.Serialize();
+                        // Write the information to the save file
+                        saveFile.WriteLine(line);
+                    }
+
+                    
+                }
             }
 
             //If the user chooses to load their goals from a file
             else if (choice == "4") {
-                // Code here
+
+                Console.WriteLine("What file would you like to load from?");
+                string filename = Console.ReadLine();
+
+                string[] lines = System.IO.File.ReadAllLines(filename);
+                total = Int32.Parse(lines[0]);
+
+                foreach (string line in lines) {
+                    
+                    Goal loadedGoal = new Goal(line);
+                    loadedGoal.Deserialize(line);
+                    Console.WriteLine(loadedGoal.Serialize());
+                    goals.Add(loadedGoal);
+            }
             }
 
 

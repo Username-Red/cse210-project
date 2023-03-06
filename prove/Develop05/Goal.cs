@@ -19,16 +19,9 @@ public class Goal {
         return null;
     }
 
-    public virtual void Deserialize(string line) {
+    public virtual Goal Deserialize(string line) {
         // Code here
-    }
-
-    public void Save() {
-        // Code here
-    }
-
-    public void Load() {
-        // Code here
+        return null;
     }
 
     public virtual void DisplayGoal() {
