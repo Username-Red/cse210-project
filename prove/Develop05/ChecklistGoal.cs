@@ -12,6 +12,14 @@ public class ChecklistGoal : Goal {
         _timesToComplete = timesToComplete;
     }
 
+    public ChecklistGoal(string line) : base(line) {
+        string[] info = line.Split("|");
+
+        _timesComplete = Int32.Parse(info[4]);
+        _timesToComplete = Int32.Parse(info[5]);
+        _isComplete = bool.Parse(info[6]);
+    }
+
     // Methods
 
         public override string Serialize()

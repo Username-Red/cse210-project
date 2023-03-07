@@ -14,7 +14,11 @@ public class Goal {
     }
 
     public Goal(string line){
-        _line = line;
+        string[] info = line.Split("|");
+
+        _title = info[1];
+        _desc = info[2];
+        _value = Int32.Parse(info[3]);
     }
 
     // Methods

@@ -8,7 +8,12 @@ public class SimpleGoal : Goal {
         _isComplete = isComplete;
     }
 
-    public SimpleGoal(string line) : base(line) {}
+    public SimpleGoal(string line) : base(line) {
+
+        string[] info = line.Split("|");
+
+        _isComplete = bool.Parse(info[4]);
+    }
 
     // Methods
     public override string Serialize()

@@ -10,7 +10,7 @@ class Program
 
 
         List<Goal> goals = new List<Goal>();
-        string[] goalTypes = {"Simple", "Eternal", "Checklist"};
+        string[] goalTypes = {"Simple", "Eternal", "Checklist", "Feel Good"};
         string [] options = {"Create New Goal", "List Goals", "Save Goals", "Load Goals", "Record Event", "Quit"};
         int total = 0;
         string choice = "";
@@ -115,6 +115,21 @@ class Program
 
                 }
 
+                // THIS PART IS TO EXCEED ERQUIREMENTS
+                else if (choice == "4") {
+                    Console.WriteLine("Welcome to your new feel good goal! \nHow much would you like this goal to be worth?");
+                    int pointValue = Int32.Parse(Console.ReadLine());
+
+                    FeelGoodGoal feelGood = new FeelGoodGoal("Feel Good!", "This goal literally just gives you more points", pointValue);
+
+                    total += feelGood.GetValue();
+
+                    goals.Add(feelGood);
+
+
+
+                }
+
 
             }
 
@@ -173,18 +188,30 @@ class Program
                 
                 total = Int32.Parse(lines[0]);
 
-                foreach (string line in lines) {
+                foreach(string line in lines) {
+
+                    string[] info = line.Split("|");
+
                     if (line != lines[0]) {
-                        SimpleGoal test = new SimpleGoal(line);
 
-                        SimpleGoal final = test.Deserialize(line);
+                        if (info[0] == "SimpleGoal") {
+                            SimpleGoal simple = new SimpleGoal(line);
+                            goals.Add(simple);
+                        }
 
-                        goals.Add(final);
+                        else if (info[0] == "EternalGoal") {
+                            EternalGoal eternal = new EternalGoal(line);
+                            goals.Add(eternal);
+                        }
+
+                        else if (info[0] == "ChecklistGoal") {
+                            ChecklistGoal checklist = new ChecklistGoal(line);
+                            goals.Add(checklist);
+                        }
                     }
-                    
-
 
                 }
+
             }
             
 

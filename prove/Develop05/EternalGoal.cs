@@ -8,6 +8,10 @@ public class EternalGoal : Goal {
         // no necessary code here
     }
 
+    public EternalGoal(string line) : base(line) {
+        // Anything of great significance happens in the base class
+    }
+
     // Methods
 
     public override void DisplayGoal()

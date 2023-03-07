@@ -1,3 +1,4 @@
 34
 SimpleGoal|fhjdsk|gsdhj|6|False
 SimpleGoal|fhsjdfsd|eryeuiw|34|True
+EternalGoal|pray|pray daily|90
