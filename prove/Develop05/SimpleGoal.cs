@@ -8,6 +8,7 @@ public class SimpleGoal : Goal {
         _isComplete = isComplete;
     }
 
+    public SimpleGoal(string line) : base(line) {}
 
     // Methods
     public override string Serialize()
@@ -16,9 +17,10 @@ public class SimpleGoal : Goal {
         return serial;
     }
 
-    public override Goal Deserialize(string line)
+    public override SimpleGoal Deserialize(string line)
     {
-        string[] info = line.Split("|");
+        string[] info = _line.Split("|");
+        Console.WriteLine("This method is running");
 
         
         _title = info[1];
@@ -42,7 +44,7 @@ public class SimpleGoal : Goal {
         else if (!_isComplete) {
             Console.Write("[ ]");
         }
-        Console.WriteLine($" {_title} ({_desc}) {_value}");
+        Console.WriteLine($" {_title} ({_desc})");
     }
 
     public override void CompleteGoal() {

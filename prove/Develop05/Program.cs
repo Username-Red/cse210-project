@@ -65,7 +65,7 @@ class Program
                     int pointValue = Int32.Parse(Console.ReadLine());
 
 
-                    // Chuck that information into our SimpleGoal object
+                    // Chuck that sortedrmation into our SimpleGoal object
                     SimpleGoal simple = new SimpleGoal(goalName, goalDesc, pointValue, false);
                     // Add the goal to the list of goals
                     goals.Add(simple);
@@ -87,7 +87,7 @@ class Program
                     int pointValue = Int32.Parse(Console.ReadLine());
 
 
-                    // Chuck that information into our EternalGoal object
+                    // Chuck that sortedrmation into our EternalGoal object
                     EternalGoal eternal = new EternalGoal(goalName, goalDesc, pointValue);
                     // Add the goal to the list of goals
                     goals.Add(eternal);
@@ -127,8 +127,8 @@ class Program
                 Console.WriteLine();
 
                 // Display every goal in the list
-                foreach (Goal line in goals) {
-                    line.DisplayGoal();
+                foreach (Goal item in goals) {
+                    item.DisplayGoal();
                 }
 
                 Console.WriteLine();
@@ -153,9 +153,9 @@ class Program
                     
                     // for each goal in the goal list
                     foreach (Goal item in goals) {
-                        // Serialize the goal information
+                        // Serialize the goal sortedrmation
                         string line = item.Serialize();
-                        // Write the information to the save file
+                        // Write the sortedrmation to the save file
                         saveFile.WriteLine(line);
                     }
 
@@ -170,16 +170,23 @@ class Program
                 string filename = Console.ReadLine();
 
                 string[] lines = System.IO.File.ReadAllLines(filename);
+                
                 total = Int32.Parse(lines[0]);
 
                 foreach (string line in lines) {
+                    if (line != lines[0]) {
+                        SimpleGoal test = new SimpleGoal(line);
+
+                        SimpleGoal final = test.Deserialize(line);
+
+                        goals.Add(final);
+                    }
                     
-                    Goal loadedGoal = new Goal(line);
-                    loadedGoal.Deserialize(line);
-                    Console.WriteLine(loadedGoal.Serialize());
-                    goals.Add(loadedGoal);
+
+
+                }
             }
-            }
+            
 
 
             // If the user chooses to complete a goal

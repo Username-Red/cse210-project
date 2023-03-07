@@ -1,4 +1,3 @@
-12
-SimpleGoal|fshdjkfs|dcbvxjkv|90|False
-EternalGoal|dsghfjk|6|657
-SimpleGoal|fshdjk|hdjfk|6|2|7|False
+34
+SimpleGoal|fhjdsk|gsdhj|6|False
+SimpleGoal|fhsjdfsd|eryeuiw|34|True

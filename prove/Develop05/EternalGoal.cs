@@ -24,7 +24,7 @@ public class EternalGoal : Goal {
     public override Goal Deserialize(string line)
     {
         string[] info = line.Split("|");
-
+        Console.WriteLine("This methi=od is running");
         _title = info[1];
         _desc = info[2];
         _value = Int32.Parse(info[3]);

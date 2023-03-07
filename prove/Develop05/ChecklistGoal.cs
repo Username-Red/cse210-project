@@ -16,14 +16,14 @@ public class ChecklistGoal : Goal {
 
         public override string Serialize()
     {
-        string serial = $"SimpleGoal|{_title}|{_desc}|{_value}|{_timesComplete}|{_timesToComplete}|{_isComplete}";
+        string serial = $"ChecklistGoal|{_title}|{_desc}|{_value}|{_timesComplete}|{_timesToComplete}|{_isComplete}";
         return serial;
     }
 
     public override Goal Deserialize(string line)
     {
         string[] info = line.Split("|");
-
+        Console.WriteLine("This methi=od is running");
         _title = info[1];
         _desc = info[2];
         _value = Int32.Parse(info[3]);
