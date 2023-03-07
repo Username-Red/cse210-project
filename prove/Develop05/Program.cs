@@ -20,10 +20,12 @@ class Program
         while (choice != "6") {
 
             // Display current score
+            Console.WriteLine();
             Console.WriteLine($"Your current score is: {total}");
             Console.WriteLine();
 
             // Display all options
+            Console.WriteLine("Menu Options");
             for (int i = 0; i < options.Count(); i ++) {
                 Console.WriteLine($"  {i+1}. {options[i]}");
             }
