@@ -210,6 +210,12 @@ class Program
                             ChecklistGoal checklist = new ChecklistGoal(line);
                             goals.Add(checklist);
                         }
+
+                        else if (info[0] == "FeelGoodGoal") {
+                            FeelGoodGoal feelgood = new FeelGoodGoal(line);
+                            goals.Add(feelgood);
+
+                        }
                     }
 
                 }
@@ -255,7 +261,7 @@ class Program
 
             }
 
-            // If theuser chooses to quit
+            // If the user chooses to quit
             else if (choice == "6") {
 
                 // The user has chosen the terminate the program. Let them know.
