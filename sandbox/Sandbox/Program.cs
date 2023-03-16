@@ -4,10 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random rd = new Random();
+        Character red = new Character("Red", 19);
+        Player stephen = new Player("Stephen", 35, "Fountain of Youth");
+        Enemy ogre = new Enemy("Urgburt", 23879, "RED");
 
-        int rand_num = rd.Next(100,200);
+        red.Introduce();
 
-        Console.WriteLine(rand_num);
+        stephen.Introduce();
+        stephen.SPAttack();
+
+        ogre.Introduce();
+        ogre.DisplayEyeCol();
+
+
+
     }
 }

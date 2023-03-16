@@ -38,7 +38,9 @@ public class Goal {
         // Code Here
     }
 
+    // CompleteGoal method for base Goal
     public virtual void CompleteGoal() {
+        Console.Write("This information is worthless");
         //Code here
     }
 

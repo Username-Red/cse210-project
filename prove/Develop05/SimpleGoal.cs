@@ -39,6 +39,7 @@ public class SimpleGoal : Goal {
 
     }
 
+
     public override void DisplayGoal()
     {
 
@@ -52,6 +53,7 @@ public class SimpleGoal : Goal {
         Console.WriteLine($" {_title} ({_desc})");
     }
 
+    // CompleteGoal method for SimpleGoal
     public override void CompleteGoal() {
         _isComplete = true;
     }

@@ -57,6 +57,8 @@ public class ChecklistGoal : Goal {
         Console.WriteLine($" {_title} ({_desc}) {_timesComplete}/{_timesToComplete}");
     }
 
+
+    // CompleteGoal method for ChecklistGoal
     public override void CompleteGoal() {
         if (_timesComplete < _timesToComplete) {
             _timesComplete += 1;
@@ -65,7 +67,7 @@ public class ChecklistGoal : Goal {
 
         if (_timesComplete == _timesToComplete) {
             _isComplete = true;
-            Console.WriteLine("Great work! You completed your goal! NOw you get your bonus!");
+            Console.WriteLine("Great work! You completed your goal! Now you get your bonus!");
             _value += _value * 3;
         }
     }
