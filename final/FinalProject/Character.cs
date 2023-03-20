@@ -4,7 +4,7 @@ public class Character {
     private string _color;
     protected int _atk;
     protected int _def;
-    private int _hp;
+    protected int _hp;
     private List<string> _inventory;
 
 
@@ -12,6 +12,8 @@ public class Character {
     public Character(string name, string color, int atk, int def, int hp, List<string> inventory) {
         _name = name;
         _color = color;
+        _atk = atk;
+        _def = def;
         _hp = hp;
         _inventory = inventory;
     }
