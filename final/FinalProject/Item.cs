@@ -13,4 +13,11 @@ public class Item {
     }
 
     // Methods
+    public void Equip(Character target) {
+        // Code Here
+    }
+
+    public virtual void DisplayInfo() {
+        // Code here
+    }
 }

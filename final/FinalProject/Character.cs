@@ -33,13 +33,9 @@ public class Character {
         Console.WriteLine($"\"Hi! I'm {_name}!\" A {_color} faced creature says, \"Pleasure to meet you!\"");
     }
 
-    public int GetHP(Character target) {
-        int hp = target._hp;
-        return hp;
-    }
     public void Attack(Character target) {
 
-        target._hp = target._hp - (_atk - target._def);
+        target._hp -= _atk - target._def    ;
         Console.WriteLine($"{target._hp}");
         Console.WriteLine("A successful hit!");
     }
