@@ -3,7 +3,7 @@ public class NPC : Character {
     private int _friendLv; 
 
     // Constructors
-    public NPC(string name, string color, int atk, int def, int hp, List<string> inventory, int friendLv) 
+    public NPC(string name, string color, int atk, int def, int hp, List<Item> inventory, int friendLv) 
     : base(name, color, atk, def, hp, inventory) {
         _friendLv = friendLv;
     }
@@ -11,10 +11,13 @@ public class NPC : Character {
     // Methods
     public override void DisplayStats()
     {
-        // Code Here
+        Console.WriteLine($"Name: {_name} \nHP: {_hp} \nFriend Level: {_friendLv} \nINventory:");
+        foreach (Item item in _inventory) {
+            item.DisplayInfo();
+        }
     }
 
     public void GiveSupport(Character target) {
-        // Code here
+        // blank 
     }
 } 

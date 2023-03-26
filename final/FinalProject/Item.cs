@@ -18,6 +18,6 @@ public class Item {
     }
 
     public virtual void DisplayInfo() {
-        // Code here
+        Console.WriteLine($"Item: {_name} \nDescription: {_description}");
     }
 }

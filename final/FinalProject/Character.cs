@@ -5,11 +5,11 @@ public class Character {
     protected int _atk;
     protected int _def;
     protected int _hp;
-    private List<string> _inventory;
+    protected List<Item> _inventory;
 
 
     // Constructors
-    public Character(string name, string color, int atk, int def, int hp, List<string> inventory) {
+    public Character(string name, string color, int atk, int def, int hp, List<Item> inventory) {
         _name = name;
         _color = color;
         _atk = atk;
@@ -26,7 +26,7 @@ public class Character {
     // Methods
     public virtual void DisplayStats() {
         // This method will display the stats of the character
-        Console.WriteLine($"{_name} \n{_hp}");
+        Console.WriteLine($"Name: {_name} \nHP: {_hp}");
     }
 
     public void Introduce() {
@@ -44,8 +44,8 @@ public class Character {
         Console.WriteLine($"Hey, {target._name}! What's up!");
     }
 
-    public void Pickup() {
-        // code for later
+    public void Pickup(Item target) {
+        _inventory.Add(target);
     }
 
 }
