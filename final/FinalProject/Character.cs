@@ -35,9 +35,27 @@ public class Character {
 
     public void Attack(Character target) {
 
-        target._hp -= _atk - target._def    ;
+        
+
+        if (target._def < _atk) {
+            target._hp -= _atk - target._def;
+        }
+
+        else if (target._def > _atk) {
+            target._def -= 1;
+        }
         Console.WriteLine($"{target._hp}");
         Console.WriteLine("A successful hit!");
+    }
+
+    public void Defend(Character target){
+        if (target._atk > _def) {
+            _hp += target._atk - _def;
+        }
+
+        else if (target._atk < _def) {
+            _hp += _def;
+        }
     }
 
     public void Talk(Character target) {
