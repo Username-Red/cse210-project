@@ -2,6 +2,7 @@ public class Player : Character {
     // Attributes
     private int _exp;
     private int _lvUpWall;
+    private int _lv = 1;
 
     // Constructors
     public Player(string name, string color, int atk, int def, int hp, List<Item> inventory) 
@@ -15,6 +16,11 @@ public class Player : Character {
 
     public void LevelUp() {
         // code here
+        _lv += 1;
+
+        int newLvWall = _lvUpWall + (10 * _lv);
+        int newExp = _exp + (10*_lv);
+
     }
 
     public void GainExp() {

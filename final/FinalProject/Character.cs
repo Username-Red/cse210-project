@@ -58,6 +58,10 @@ public class Character {
         }
     }
 
+    public int GetHp() {
+        return _hp;
+    }
+
     public void Talk(Character target) {
         Console.WriteLine($"Hey, {target._name}! What's up!");
     }

@@ -10,6 +10,9 @@ class Program
         
         Item flower = new Item("Water Lilly", "A beautiful blue Water Lilly commonly found near the Wendigo Lakeside");
 
+
+        bool battling = false;
+        string[] combatOptions = {"Attack", "Defend", "Special Attack"};
         // Player starts creating their character
 
         Console.WriteLine("Hello there, new friend. What is your name? :");
@@ -25,7 +28,7 @@ class Program
         Console.WriteLine("Very interesting... What is your favourite color?: ");
         string color = Console.ReadLine();
 
-        Player user = new Player(name, color, 2, 2, 20, charInventory);
+        Player user = new Player(name, color, 4, 2, 20, charInventory);
 
         Console.WriteLine($"Well {name}, welcome to the Imaginary Island. Don't be alarmed, you will be in good hands. Until we meet again...");
         Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
@@ -77,12 +80,66 @@ class Program
         Console.WriteLine($"\"Okay okay enough dilly dally, we gotta check that you're firing on all cylinders, remember?\" {friendName} says as she fastens her own shield to her arm.");
         Console.ReadLine();
 
+
+        // start combat tutorial
+
+
+        battling = true;
+        while (battling) {
+
+            int opponentHP = doodle.GetHp();
+            int playerHP = user.GetHp();
+
+            if (playerHP > 0) {
+                for (int i = 0; i < combatOptions.Count(); i ++) {
+                Console.WriteLine($"{i + 1}.  {combatOptions[i]}");
+                }
+
+                choice = Console.ReadLine();
+
+                if (choice == "1") {
+                    // attack code
+                    user.Attack(doodle);
+                }
+
+                else if (choice == "2") {
+                    // defend code
+                    user.Defend(doodle);
+                }
+
+                else if (choice == "3") {
+                    // special attack code
+                }
+
+                else {
+                    Console.WriteLine("I'm sorry, that is not a registered command.");
+                }
+            }
+
+            if (playerHP <= 0) {
+                Console.WriteLine("Game Over");
+                battling = false;
+            }
+
+            else if (opponentHP <= 0) {
+                Console.WriteLine("VIctory! Fight over");
+                battling = false;
+            }
+            
+        }
+
+
         // complete combat tutorial
+
+        Console.WriteLine("Okay, you're all clear. Go find something to put on your shield in the eternal Woods!");
         // explore Eternal Woods
-        // find something to add to your shield
+        // find something to add to your inventory
+        user.Pickup(flower);
         // find badguy
+        Enemy badguy = new Enemy("Aleister", "Purple", 2, 2, 25, charInventory, 10);
         // defeat badguy
         // find weird crystal thing
+
         // give weird crystal thing to village elder
         // roll credits
 
