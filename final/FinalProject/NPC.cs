@@ -20,4 +20,7 @@ public class NPC : Character {
     public void GiveSupport(Character target) {
         // blank 
     }
+    public void AddFriendLv(int value) {
+        _friendLv += value;
+    }
 } 
