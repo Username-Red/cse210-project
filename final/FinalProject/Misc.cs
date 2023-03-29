@@ -9,7 +9,17 @@ public class Misc : Item {
 
     }
 
+    public Misc(string line) : base(line) {
+
+    }
+
     // Methods
+
+    public int GiveInfo() {
+        
+        return _effect;
+    }
+
     public override void DisplayInfo() {
         //Code here
     }

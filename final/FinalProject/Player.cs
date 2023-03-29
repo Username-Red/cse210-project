@@ -28,8 +28,8 @@ public class Player : Character {
         // I'm just adding it because it matches the plan
     }
 
-    public void GetSupport() {
-        // Again, no idea why I added this when the Supporter game mechanic is already located in the NPC class
-        // But it matches the plan, so I have added it
+    public void GetSupport(int friendBoost) {
+        _atk += friendBoost;
+        
     }
 }

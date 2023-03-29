@@ -28,7 +28,7 @@ class Program
         Console.WriteLine("Very interesting... What is your favourite color?: ");
         string color = Console.ReadLine();
 
-        Player user = new Player(name, color, 4, 2, 20, charInventory);
+        Player user = new Player(name, color, 5, 2, 20, charInventory);
 
         Console.WriteLine($"Well {name}, welcome to the Imaginary Island. Don't be alarmed, you will be in good hands. Until we meet again...");
         Console.WriteLine("-------------------------------------------------------------------------------------------------------------------");
