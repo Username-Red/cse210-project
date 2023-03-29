@@ -76,9 +76,10 @@ public class Character {
     }
 
     public void Drop(Item target) {
-        foreach (Item item in _inventory) {
-            if (item == target) {
-                _inventory.Remove(item);
+
+        for (int i = 0; i <= _inventory.Count(); i ++) {
+            if (_inventory[i] == target) {
+                _inventory.Remove(_inventory[i]);
             }
         }
     }

@@ -1,7 +1,7 @@
 public class Shield : Item {
     // Attributes
     public int _defBoost;
-    public List<Item> _boundItems;
+    public List<Item> _boundItems = new List<Item>();
 
     // Constructors 
     public Shield(string name, string desc, int defBoost) : base(name, desc) {
