@@ -7,6 +7,8 @@ public class Character {
     protected int _hp;
     protected List<Item> _inventory;
 
+    protected Item _equippedItem;
+
 
     // Constructors
     public Character(string name, string color, int atk, int def, int hp, List<Item> inventory) {
@@ -20,6 +22,7 @@ public class Character {
 
     public Character(string line) {
         // Code added later
+
     }
 
 
@@ -44,11 +47,11 @@ public class Character {
         else if (target._def > _atk) {
             target._def -= 1;
         }
-        Console.WriteLine($"{target._hp}");
-        Console.WriteLine("A successful hit!");
+        
+        Console.WriteLine($"{_name} lands a successful hit on {target._name}!");
     }
 
-    public void Defend(Character target){
+    public void DefendFrom(Character target){
         if (target._atk > _def) {
             _hp += target._atk - _def;
         }
@@ -56,6 +59,8 @@ public class Character {
         else if (target._atk < _def) {
             _hp += _def;
         }
+
+        Console.WriteLine($"{_name} has taken a defensive stance against {target._name}!");
     }
 
     public int GetHp() {
@@ -68,6 +73,19 @@ public class Character {
 
     public void Pickup(Item target) {
         _inventory.Add(target);
+    }
+
+    public void Drop(Item target) {
+        foreach (Item item in _inventory) {
+            if (item == target) {
+                _inventory.Remove(item);
+            }
+        }
+    }
+
+    public void Equip(Item target) {
+        _equippedItem = target;
+        Console.WriteLine($"{_name} equipped {target._name}");
     }
 
 }

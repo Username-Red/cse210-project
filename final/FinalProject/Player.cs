@@ -1,7 +1,7 @@
 public class Player : Character {
     // Attributes
-    private int _exp;
-    private int _lvUpWall;
+    private int _exp = 0;
+    private int _lvUpWall = 10;
     private int _lv = 1;
 
     // Constructors
@@ -16,16 +16,19 @@ public class Player : Character {
 
     public void LevelUp() {
         // code here
-        _lv += 1;
 
-        int newLvWall = _lvUpWall + (10 * _lv);
-        int newExp = _exp + (10*_lv);
+        if (_exp == _lvUpWall) {
+            _lv += 1;
+
+            int newLvWall = _lvUpWall + (10 * _lv);
+            int newExp = _exp + (10*_lv);
+        }
+        
 
     }
 
     public void GainExp() {
-        // For reference, I have no idea why I added this when LevelUp() Is right above it
-        // I'm just adding it because it matches the plan
+        _exp += 5;
     }
 
     public void GetSupport(int friendBoost) {

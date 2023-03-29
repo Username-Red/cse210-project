@@ -1,6 +1,6 @@
 public class Item {
     // Attributes
-    private string _name;
+    public string _name;
     private string _description;
 
     // Constructors
