@@ -73,7 +73,7 @@ public class Character {
 
     public void Pickup(Item target) {
         _inventory.Add(target);
-        Console.WriteLine($"*{target._name} added to {_name}'s inventory.");
+        Console.WriteLine($"*{target.GetName()} added to {_name}'s inventory.");
     }
 
     public void Drop(Item target) {
@@ -87,7 +87,7 @@ public class Character {
 
     public void Equip(Item target) {
         _equippedItem = target;
-        Console.WriteLine($"*{_name} equipped {target._name}*");
+        Console.WriteLine($"*{_name} equipped {target.GetName()}*");
     }
 
 }

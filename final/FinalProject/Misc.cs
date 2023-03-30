@@ -1,7 +1,7 @@
 public class Misc : Item {
 
     // Attributes
-    public int _effect;
+    protected int _effect;
 
     // Constructors 
     public Misc(string name, string desc, int effect) : base(name, desc) {

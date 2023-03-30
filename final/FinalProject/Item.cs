@@ -1,6 +1,6 @@
 public class Item {
     // Attributes
-    public string _name;
+    protected string _name;
     protected string _description;
 
     // Constructors
@@ -19,5 +19,9 @@ public class Item {
 
     public virtual void DisplayInfo() {
         Console.WriteLine($"    Item: {_name} \n    Description: {_description}");
+    }
+
+    public string GetName() {
+        return _name;
     }
 }

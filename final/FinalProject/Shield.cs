@@ -1,7 +1,7 @@
 public class Shield : Item {
     // Attributes
-    public int _defBoost;
-    public List<Item> _boundItems = new List<Item>();
+    protected int _defBoost;
+    protected List<Item> _boundItems = new List<Item>();
 
     // Constructors 
     public Shield(string name, string desc, int defBoost) : base(name, desc) {
@@ -13,7 +13,7 @@ public class Shield : Item {
 
     public void Bind(Item misc) {
         _boundItems.Add(misc);
-        Console.WriteLine($"*{misc._name} has been bound to the Shield*");
+        Console.WriteLine($"*{misc.GetName()} has been bound to the Shield*");
     }
 
     public int GiveDefBoost() {
