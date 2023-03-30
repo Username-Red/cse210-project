@@ -93,7 +93,7 @@ class Program
 
             if (playerTurn) {
                 for (int i = 0; i < combatOptions.Count(); i ++) {
-                    Console.WriteLine($"{i + 1}.  {combatOptions[i]}");
+                    Console.WriteLine($"  {i + 1}. {combatOptions[i]}");
                 }
 
                 choice = Console.ReadLine();
@@ -207,7 +207,7 @@ class Program
 
             if (playerTurn) {
                 for (int i = 0; i < combatOptions.Count(); i ++) {
-                    Console.WriteLine($"{i + 1}.  {combatOptions[i]}");
+                    Console.WriteLine($"  {i + 1}. {combatOptions[i]}");
                 }
 
                 choice = Console.ReadLine();
@@ -282,13 +282,14 @@ class Program
 
         text.Print("\"Hmmmm... Indeed\"", "Cyan");
         text.Puts("\"I will keep it here, if I may. I wish to study it, I have no memory of any item like it.\" She says, holding out her hands.");
-        choice = text.Print("    \"1. Here you go\" \n    \"2. No, I will keep this crystal in my own hut\"", color);
+        choice = text.Print("  \"1. Here you go\" \n  \"2. No, I will keep this crystal in my own hut\"", color);
 
         if (choice == "1") {
-            text.Print($"Thank you, {name}", "Cyan");
+            text.Print($"\"Thank you, {name}\"", "Cyan");
             user.Drop(crystal);
             mama.Pickup(crystal);
         }
+
         else if (choice == "2") {
             text.Print($"Ah, very well. Be careful though, {name}. I know nothing of this strange rock.", "Cyan");
         }
