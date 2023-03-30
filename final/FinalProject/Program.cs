@@ -38,12 +38,12 @@ class Program
 
         // Enter the world
 
-        text.Print($"\"{name}? {name}... WAKE UP!\"\n(Hit enter to continue)", "Magenta");
+        text.Print($"\"{name}? {name}... WAKE UP!\"\n(Hit enter to continue)", "Red");
 
         text.Print("*The figure above you gives you a VIGOROUS shake.", color);
         text.Puts("\"OKAY OKAY OKAY I'M UP\" You say as you push yourself up out of the warm sheets of the bed.");
         
-        text.Print($"\"{uppername}, THANK GOODNESS YOU'RE AWAKE\"\n\"You fell from that huge tree you always climb, I was worried ya know,\"", "Magenta");
+        text.Print($"\"{uppername}, THANK GOODNESS YOU'RE AWAKE\"\n\"You fell from that huge tree you always climb, I was worried ya know,\"", "Red");
         
         text.Print($"*You recognize the kind face staring down at you as your friend... ", color);
         string friendName = text.Puts("Wait... What was her name again? (What is your friend's name?): ");
@@ -51,18 +51,18 @@ class Program
         friendName = char.ToUpper(friendName[0]) + friendName.Substring(1);
         NPC doodle = new NPC(friendName, "Red", 3, 2, 20, charInventory, 5);
 
-        text.Print($"\"Well,\" {friendName} says as she straightens up, \"Mama says we should bring you to the combat arena to make sure you're all clear,\"", "Magenta");
+        text.Print($"\"Well,\" {friendName} says as she straightens up, \"Mama says we should bring you to the combat arena to make sure you're all clear,\"", "Red");
         string choice = text.Print($"(what will yo do?) \n  1. Stay in bed \n  2. Follow {friendName} to the combat arena", "Cyan");
         
 
         // get to combat arena
 
         if (choice == "1") {
-            text.Print("\"You wanna stay in bed? TOO BAD WE'RE GOING TO THE COMBAT ARENA\" She pulls you ROUGHLY out of bed and almost DRAGS you to the combat arena.","Magenta");
+            text.Print("\"You wanna stay in bed? TOO BAD WE'RE GOING TO THE COMBAT ARENA\" She pulls you ROUGHLY out of bed and almost DRAGS you to the combat arena.","Red");
         }
 
         else if (choice == "2") {
-            text.Print($"\"That's the spirit, {name}!\"", "Magenta");
+            text.Print($"\"That's the spirit, {name}!\"", "Red");
             doodle.AddFriendLv(2);
         }
 
@@ -75,7 +75,7 @@ class Program
         text.Print($"*Huh? Shield? As you look down to inspect what you had caught, you see a wonderful {color} shield. After a second of consideration, \nyou remember that this is the same shield that you have had for years, but it looks brand new now.", color);
         user.Equip(shield);
 
-        text.Print($"\"Okay okay enough dilly dally, we gotta check that you're firing on all cylinders, remember?\" {friendName} says as she fastens her own shield to her arm.", "Magenta");
+        text.Print($"\"Okay okay enough dilly dally, we gotta check that you're firing on all cylinders, remember?\" {friendName} says as she fastens her own shield to her arm.", "Red");
 
         text.Print("Fighters ready?", "Red");
         text.Puts("Fight!");
@@ -121,7 +121,7 @@ class Program
 
             else if (!playerTurn) {
                 if (playerHP <= 5) {
-                    text.Say($"Come on, wake up {name}!", "Magenta");
+                    text.Say($"Come on, wake up {name}!", "Red");
                 }
 
                 else if (playerHP > 5) {
@@ -151,7 +151,7 @@ class Program
 
         // complete combat tutorial
 
-        text.Print("Okay, you're all clear. Go find something to put on your shield in the eternal Woods!", "Magenta");
+        text.Print("Okay, you're all clear. Go find something to put on your shield in the eternal Woods!", "Red");
         // explore Eternal Woods
 
         text.Print($"*{friendName} gives you a playful shove in the direction of the Eternal Woods.", "Cyan");
@@ -163,8 +163,8 @@ class Program
 
         if (choice == "Left") {
             text.Print("*The sound of running water beckons you to go left.", color);
-            text.Puts("It is not long before you find a beautful water lilly floating close to the lakeside.");
-            text.Puts($"You gently pick it up. The second your hand grasps its petals, you know that his is the item {friendName} told you about.");
+            text.Puts("It is not long before you find a beautiful water lilly floating close to the lakeside.");
+            text.Puts($"You gently pick it up. The second your hand grasps its petals, you know that this is the item {friendName} told you about.");
             text.Puts("You place the flower on your shield, and it immediately attaches itself. You have done well.");
             shield.Bind(flower);
         }
@@ -187,11 +187,11 @@ class Program
 
         // find badguy
 
-        text.Print($"\"You take such things as if they are yours, oh strange one with face of {color}.\"", "DarkMagenta");
-        text.Puts("For this, you shall be punished!");
+        text.Print($"\"You take such things as if they are yours, oh strange one with face of {color}.\"", "Purple");
+        text.Puts("\"For this, you shall be punished!\"");
 
         text.Print("*A strange creature attacks you!", "Cyan");
-        Enemy badguy = new Enemy("Aleister", "Purple", 2, 2, 25, charInventory, 10);
+        Enemy badguy = new Enemy("Aleister", "Purple", 5, 2, 25, charInventory, 10);
 
 
         battling = true;
@@ -235,7 +235,7 @@ class Program
 
             else if (!playerTurn) {
                 if (playerHP <= 5) {
-                    text.Say($"Fight back oh cowardly one with face of {color}!", "DarkMagenta");
+                    text.Say($"Fight back oh cowardly one with face of {color}!", "Purple");
                 }
 
                 else if (playerHP > 5) {
@@ -290,13 +290,20 @@ class Program
             mama.Pickup(crystal);
         }
         else if (choice == "2") {
-            text.Print("Ah, very well. Be careful though, {name}. I know nothing of this strange rock.", "Cyan");
+            text.Print($"Ah, very well. Be careful though, {name}. I know nothing of this strange rock.", "Cyan");
         }
 
         else {
             
         }
         
+        text.Print("That night, as you laid in bed, your thoughs are filled only with that of the glowing purple crystal.", color);
+        text.Puts("But it's probably not that important... ");
+        text.Print("Right?", "Purple");
+        text.Puts("It's");
+        text.Puts("Only");
+        text.Puts("A");
+        text.Puts("Rock");
         // roll credits
 
     }

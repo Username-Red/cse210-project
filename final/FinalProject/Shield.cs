@@ -13,7 +13,7 @@ public class Shield : Item {
 
     public void Bind(Item misc) {
         _boundItems.Add(misc);
-        Console.WriteLine($"*{misc._name} has beenbound to the Shield*");
+        Console.WriteLine($"*{misc._name} has been bound to the Shield*");
     }
 
     public int GiveDefBoost() {

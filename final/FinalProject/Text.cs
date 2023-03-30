@@ -84,7 +84,7 @@ public class Text {
         else if (color == "DarkGreen") {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
-        else if (color == "DarkMagenta") {
+        else if (color == "Purple") {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         }
         else if (color == "DarkCyan") {
