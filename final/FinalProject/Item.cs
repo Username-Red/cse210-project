@@ -1,7 +1,7 @@
 public class Item {
     // Attributes
     public string _name;
-    private string _description;
+    protected string _description;
 
     // Constructors
     public Item(string name, string desc) {

@@ -13,9 +13,14 @@ public class Shield : Item {
 
     public void Bind(Item misc) {
         _boundItems.Add(misc);
+        Console.WriteLine($"*{misc._name} has beenbound to the Shield*");
     }
 
-    public void GiveDefBoost(Character target) {
-        // Code here
+    public int GiveDefBoost() {
+        return _defBoost;
     }  
+
+    public override void DisplayInfo() {
+        Console.WriteLine($"    Item: {_name} \n    Description: {_description}\n    Def Boost: {_defBoost}");
+    }
 }

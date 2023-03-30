@@ -21,7 +21,7 @@ public class Misc : Item {
     }
 
     public override void DisplayInfo() {
-        //Code here
+        Console.WriteLine($"    Item: {_name} \n    Description: {_description}\n    Boost: {_effect}");
     }
 
 }
